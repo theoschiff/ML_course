@@ -47,3 +47,10 @@ def build_distance_matrix(data, mu):
     ####################################
     ### ___ Enter your code here ___ ###
     ####################################
+    N, d = data.shape
+    k, _ = mu.shape
+    distance_matrix = np.zeros((N, k))
+    for i in range(N):
+        for j in range(k):
+            distance_matrix[i,j] = np.linalg.norm(data[i]-mu[j])**2
+    return distance_matrix
